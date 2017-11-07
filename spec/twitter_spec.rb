@@ -25,17 +25,7 @@ describe TwitterApi do
     end
   end
 
-  describe "#find_followers_for" do
-    xit "given a username, it returns the first 10 followers for that user" do
-      VCR.use_cassette('twitter/find_followers_for') do
-        user = client.find_followers_for("sm_debenedetto")
-        expect(user).to be_a(Array)
-        expect(user.count).to eq(10)
-        expect(user.first.class).to eq(Hash)
-        expect(user.first[:name]).to eq("Adeline Gross")
-      end
-    end
-  end
+
 
   describe "#homepage_timeline" do
     it "returns an array of tweet objects from the client user's homepage" do
